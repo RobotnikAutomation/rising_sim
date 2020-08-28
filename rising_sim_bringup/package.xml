@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>rising_sim_bringup</name>
+  <version>0.0.0</version>
+  <description>The rising_sim_bringup package</description>
+
+  <maintainer email="clagarde@robotnik.es">cris</maintainer>
+  <maintainer email="rjulia@robotnik.es">raquel</maintainer>
+
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>rising_control</run_depend>
+  <run_depend>rising_description</run_depend>
+  <run_depend>rising_pad</run_depend>
+
+</package>

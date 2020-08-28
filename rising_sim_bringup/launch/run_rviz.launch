@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- What simulator to use -->
+  <arg name="simulation_package" default="$(optenv SIMULATION_PACKAGE rising_gazebo)"/>
+  <arg name="config_package" default="$(optenv CONFIG_PACKAGE rising_gazebo)"/>
+  
+  <!-- Rviz arguments -->
+  <arg name="rviz_config_file" default="rviz/rising.rviz"/>
+  <arg name="rviz_config_path" default="$(eval find(config_package) + '/' + rviz_config_file)"/>
+
+  <!-- Run rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(arg rviz_config_path)"/>
+
+</launch>
