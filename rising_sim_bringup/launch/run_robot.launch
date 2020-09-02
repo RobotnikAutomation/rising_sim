@@ -17,6 +17,15 @@
   <arg name="y_init_pose" default="0"/>
   <arg name="z_init_pose" default="0"/>
   <arg name="launch_base_hw_sim" default="false"/>
+
+   <!-- Arm configuration-->
+  <arg name="launch_arm_control" default="true"/>
+	<arg name="launch_arm" default="$(arg launch_arm_control)"/>
+  <arg name="arm_controllers" default="gen3_joint_trajectory_controller"/> <!-- controllers can be listed seprated by a blank space -->
+  
+  <!-- Gripper configuration-->
+  <arg name="launch_gripper_control" default="true"/>
+  <arg name="gripper_controllers" default="gen3_lite_2f_gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
   
   <!-- Launch robot (simulation specific software) -->
   <group ns="$(arg robot_id)">
@@ -36,6 +45,8 @@
     <include file="$(find rising_description)/launch/rising_state.launch" >
       <arg name="robot_id" value="$(arg robot_id)" />
       <arg name="robot_xacro" value="$(arg robot_xacro)" />
+      <!--arg name="has_arm" value="$(arg launch_arm_control)" />
+      <arg name="has_gripper" value="$(arg launch_gripper_control)" /-->
     </include>
 
     <!-- Start control nodes -->

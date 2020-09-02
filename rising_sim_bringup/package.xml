@@ -15,6 +15,5 @@
   <run_depend>gazebo_ros</run_depend>
   <run_depend>rising_control</run_depend>
   <run_depend>rising_description</run_depend>
-  <run_depend>rising_pad</run_depend>
 
 </package>
