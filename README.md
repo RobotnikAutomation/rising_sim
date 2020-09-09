@@ -75,5 +75,5 @@ cd ../
 rosdep install --from-paths src --ignore-src -y
 ```
  
-2) Launch RB-Sherpa simulation.
+2) Launch Rising simulation.
 
