@@ -3,6 +3,29 @@ rising
 
 Packages for the simulation of the Rising
 
+You will need to install Gazebo 9.14 to make simulation work due to RS_BPearl lidar.
+
+Please note that we are using Gazebo default version 9.0 in melodic but to make simulation work you will need to install Gazebo 9.14.
+
+```bash
+sudo apt-get remove ros-melodic-gazebo* gazebo*
+```
+```bash
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable lsb_release -cs main" > /etc/apt/sources.list.d/gazebo-stable.list'
+```
+```bash
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+```
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install gazebo9 gazebo9-* ros-melodic-gazebo9-*
+```
+```bash
+sudo apt upgrade
+```
+
 <h2>rising_gazebo</h2>
 
 Launch files and world files to start the models in gazebo

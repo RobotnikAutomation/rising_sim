@@ -41,7 +41,7 @@
   <!-- Gripper configuration-->
   <arg name="default_gripper_model" default="gen3_lite_2f_gripper"/>
   <arg name="default_xacro_gripper" default="$(optenv ROBOT_XACRO gen3_lite_2f_macro.xacro)"/>
-  <arg name="has_gripper" default="true"/>
+  <arg name="has_gripper" default="false"/>
 
   <!-- RViz configuration -->
   <arg name="rviz_config_file" default="rviz/rising.rviz"/>

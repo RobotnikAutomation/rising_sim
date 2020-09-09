@@ -24,7 +24,7 @@
   <arg name="arm_controllers" default="gen3_joint_trajectory_controller"/> <!-- controllers can be listed seprated by a blank space -->
   
   <!-- Gripper configuration-->
-  <arg name="launch_gripper_control" default="true"/>
+  <arg name="launch_gripper_control" default="false"/>
   <arg name="gripper_controllers" default="gen3_lite_2f_gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
   
   <!-- Launch robot (simulation specific software) -->
@@ -53,6 +53,7 @@
     <include file="$(find rising_control)/launch/rising_control.launch">
       <arg name="robot_id" value="$(arg robot_id)"/>
       <arg name="sim" value="true"/>
+      <arg name="sim_gripper_control" value="$(arg launch_gripper_control)"/>
     </include>
 
     <!-- pad 
