@@ -41,6 +41,7 @@ Launch files that execute the complete simulation of the robot
   - [rising_common](https://github.com/RobotnikAutomation/rising_common)
   - [robotnik_sensors](https://github.com/RobotnikAutomation/robotnik_sensors)
   - [ros_kortex](https://github.com/Kinovarobotics/ros_kortex)
+  - [velodyne_simulator](https://github.com/RobotnikAutomation/velodyne_simulator.git)
 
 In order to install ros_kortex, you need to execute:
 
@@ -49,6 +50,9 @@ sudo apt install python3 python3-pip
 ```
 ```bash
 sudo python3 -m pip install conan
+```
+```bash
+sudo pip3 install --upgrade jinja2
 ```
 ```bash
 conan config set general.revisions_enabled=1
@@ -77,3 +81,22 @@ rosdep install --from-paths src --ignore-src -y
  
 2) Launch Rising simulation.
 
+
+<h2>ADDITIONAL INFO</h2>
+The control is done by position.
+
+To move the robot it is necesssary to publish in 4 different topics, one per flipper:
+
+- /robot/back_left_master_wheel_joint_controller/command
+- /robot/back_right_master_wheel_joint_controller/command
+- /robot/front_left_master_wheel_joint_controller/command
+- /robot/front_right_master_wheel_joint_controller/command
+
+To rotate the robot, flippers must be moved faster on one side than on the other.
+
+
+To tiptoe the robot or rotate the flippers, it will be necessary to publish in the following topics. 
+- /robot/back_flipper_joint_controller/command
+- /robot/front_flipper_joint_controller/command
+
+The flippers, in this case, will move in pairs.
