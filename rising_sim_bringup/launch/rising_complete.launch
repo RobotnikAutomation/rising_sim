@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="arm_controllers" default="gen3_joint_trajectory_controller"/> <!-- controllers can be listed seprated by a blank space -->
-  <arg name="gripper_controllers" default="gen3_lite_2f_gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
-
   <!-- What simulator config package to use -->
   <arg name="simulation_package" default="$(optenv SIMULATION_CONFIG_PACKAGE rising_gazebo)"/>
   <arg name="config_package" default="$(optenv CONFIG_PACKAGE rising_gazebo)"/>
@@ -36,12 +33,14 @@
    <!-- Arm configuration-->
   <arg name="default_arm_model" default="gen3_arm"/>
   <arg name="default_xacro_arm" default="$(optenv ROBOT_XACRO gen3_macro.xacro)"/>
-  <arg name="has_arm" default="true"/>
+  <arg name="launch_arm_control" default="false"/>
+  <arg name="arm_controllers" default="gen3_joint_trajectory_controller"/> <!-- controllers can be listed seprated by a blank space -->
   
   <!-- Gripper configuration-->
   <arg name="default_gripper_model" default="gen3_lite_2f_gripper"/>
   <arg name="default_xacro_gripper" default="$(optenv ROBOT_XACRO gen3_lite_2f_macro.xacro)"/>
-  <arg name="has_gripper" default="false"/>
+  <arg name="launch_gripper_control" default="false"/>
+  <arg name="gripper_controllers" default="gen3_lite_2f_gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
 
   <!-- RViz configuration -->
   <arg name="rviz_config_file" default="rviz/rising.rviz"/>
@@ -71,9 +70,9 @@
     <arg name="z_init_pose" value="$(arg z_init_pose)"/>
     <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
     <arg name="arm_controllers" value="$(arg arm_controllers)"/>
-    <arg name="launch_gripper_control" value="$(arg has_gripper)"/>
+    <arg name="launch_gripper_control" value="$(arg launch_gripper_control)"/>
     <arg name="gripper_controllers" value="$(arg gripper_controllers)"/>
-    <arg name="launch_arm_control" value="$(arg has_arm)"/>
+    <arg name="launch_arm_control" value="$(arg launch_arm_control)"/>
 
   </include>
 
