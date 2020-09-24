@@ -81,6 +81,14 @@ rosdep install --from-paths src --ignore-src -y
  
 2) Launch Rising simulation.
 
+In case you want to launch the rising with a Kinova arm you can type the following command:
+```bash
+roslaunch rising_sim_bringup rising_complete.launch launch_arm_control:=true launch_gripper_control:=true arm_controllers:=arm_controller
+```
+Or even use moveit to plan trajectories:
+```bash
+ROS_NAMESPACE=robot roslaunch moveit_kinova rising_moveit_config.launch
+```
 
 <h2>ADDITIONAL INFO</h2>
 The control is done by position.
