@@ -11,7 +11,7 @@ Please note that we are using Gazebo default version 9.0 in melodic but to make 
 sudo apt-get remove ros-melodic-gazebo* gazebo*
 ```
 ```bash
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable lsb_release -cs main" > /etc/apt/sources.list.d/gazebo-stable.list'
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable bionic main" > /etc/apt/sources.list.d/gazebo-stable.list'
 ```
 ```bash
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
