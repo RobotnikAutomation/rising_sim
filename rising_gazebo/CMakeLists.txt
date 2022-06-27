@@ -9,30 +9,13 @@ find_package(catkin REQUIRED COMPONENTS
     gazebo_ros
 )
 
-
-###################################
-## catkin specific configuration ##
-###################################
-catkin_package(
-
-)
-
-###########
-## Build ##
-###########
-
+catkin_package()
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-
-#############
-## Install ##
-#############
-
-
 install(
-  DIRECTORY launch worlds
+  DIRECTORY launch worlds models rviz
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
